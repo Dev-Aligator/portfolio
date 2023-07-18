@@ -21,7 +21,10 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+    setButtonText("Sending");
+    setStatus({ success: true, message: "" });
+  };
   return (
     <section className="contact" id="contact">
       <Container>

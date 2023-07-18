@@ -1,4 +1,4 @@
-import { Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
+import { Nav, Navbar, Container } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import logo from "../assets/img/logo.svg";
 import navIcon1 from "../assets/img/nav-icon1.svg";
