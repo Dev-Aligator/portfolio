@@ -1,8 +1,8 @@
 import { Container, Col, Row } from "react-bootstrap";
 import aligatorImage from "../assets/img/aligator.png";
-import navIcon1 from "../assets/img/nav-icon1.svg";
+import navIcon1 from "../assets/img/github.svg";
 import navIcon2 from "../assets/img/nav-icon2.svg";
-import navIcon3 from "../assets/img/nav-icon3.svg";
+import navIcon3 from "../assets/img/twitter.svg";
 
 const Footer = () => {
   return (
