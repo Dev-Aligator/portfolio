@@ -12,6 +12,9 @@ const Banner = () => {
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const period = 2000;
 
+  const leuUsConnect = () => {
+    window.location.href = "#contact";
+  };
   useEffect(() => {
     let ticker = setInterval(() => {
       tick();
@@ -69,7 +72,7 @@ const Banner = () => {
                     enhances my capabilities. Let's embark on a journey of
                     exploration and growth together!
                   </p>
-                  <button onClick={() => console.log("connect")}>
+                  <button onClick={leuUsConnect}>
                     Let's connect
                     <ArrowRightCircle size={25}></ArrowRightCircle>
                   </button>
