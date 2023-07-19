@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
-import headerImg from "../assets/img/header-img.svg";
+import crocoPlanet from "../assets/img/CrocoPlanet.svg";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
+  const toRotate = ["Web Developer", "Machine Learning Eng", "Researcher"];
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const period = 2000;
@@ -59,17 +59,18 @@ const Banner = () => {
                   <span className="tagLine">Welcome to my Portfolio</span>
                   <h1>
                     {`Hi I'm Dev-Aligator`}
-                    <span className="wrap">{text}</span>
+                    <br />
+                    <span className="wrap text-rotate">A {text}</span>
                   </h1>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book
+                    At 20 years old, I possess a strong foundation in Java, C#,
+                    and Python, specializing in backend development and
+                    frameworks. Proficiency in both Linux and Windows further
+                    enhances my capabilities. Let's embark on a journey of
+                    exploration and growth together!
                   </p>
                   <button onClick={() => console.log("connect")}>
-                    Let's connect{" "}
+                    Let's connect
                     <ArrowRightCircle size={25}></ArrowRightCircle>
                   </button>
                 </div>
@@ -77,7 +78,11 @@ const Banner = () => {
             </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>
-            <img src={headerImg} alt="Header Image"></img>
+            <img
+              className="banner-image"
+              src={crocoPlanet}
+              alt="Header Image"
+            ></img>
           </Col>
         </Row>
       </Container>

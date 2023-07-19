@@ -234,7 +234,20 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	border-color: transparent;
 }
 
+.img-photo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
 
+.img-photo-footer {
+  border-radius: 50%;
+}
+
+.banner-image {
+  width: 680px;
+  height: 860px;
+}
 /************ Banner Css ************/
 .banner {
   margin-top: 0;
@@ -288,21 +301,27 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-left: 25px;
 }
 .banner img {
-  animation: updown 3s linear infinite;
+  animation: updown 6s linear infinite;
 }
 @keyframes updown {
     0% {
-        transform: translateY(-20px);
+        transform: translateY(-300px);
     }
     50% {
-        transform: translateY(20px);
+        transform: translateY(-200px);
     }
     100% {
-        transform: translateY(-20px);
+        transform: translateY(-300px);
     }
 }
 .txt-rotate > .wrap {
   border-right: 0.08em solid #666;
+}
+
+.text-rotate {
+  border-right: 0.08em solid #666;
+  font-size: 50px; 
+
 }
 
 /* SKills */
