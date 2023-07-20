@@ -4,6 +4,7 @@ import { ArrowRightCircle } from "react-bootstrap-icons";
 import crocoPlanet from "../assets/img/CrocoPlanet.svg";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
+import SideBar from "./SideBar";
 const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -51,6 +52,12 @@ const Banner = () => {
     <section className="banner">
       <Container>
         <Row className="align-item-center">
+          <SideBar
+            startColor="purple"
+            endColor="yellow"
+            isVisible={true}
+          ></SideBar>
+
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) => (
@@ -80,7 +87,7 @@ const Banner = () => {
               )}
             </TrackVisibility>
           </Col>
-          <Col xs={12} md={6} xl={5}>
+          <Col xs={12} md={6} xl={4}>
             <img
               className="banner-image"
               src={crocoPlanet}

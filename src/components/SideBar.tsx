@@ -4,11 +4,21 @@ interface Props {
   startColor: string;
   endColor?: string;
   isVisible?: boolean;
+  x?: string;
+  y?: string;
+  strokeWidth?: string;
+  width?: string;
+  height?: string;
 }
 const SideBar = ({
   startColor,
   endColor = startColor,
   isVisible = false,
+  x = "50%",
+  y = "0%",
+  strokeWidth = "2",
+  width = "1%",
+  height = "100%",
 }: Props) => {
   return (
     <Col className="side-bar" xs={1} md={1} lg={1}>
@@ -21,12 +31,12 @@ const SideBar = ({
             </linearGradient>
           </defs>
           <rect
-            x="50%"
-            y="0%"
-            width="1%"
-            height="100%"
+            x={x}
+            y={y}
+            width={width}
+            height={height}
             stroke="url(#grad1)"
-            stroke-width="2"
+            stroke-width={strokeWidth}
             fill="none"
           />
         </svg>
