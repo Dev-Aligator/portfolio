@@ -1,16 +1,22 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
-function FetchData<T>() {
-  const [data, setData] = useState<T>(); // Use the generic type for 'data'
-
+function FetchData<T>(many: boolean): T | T[] | undefined {
+  const [data, setData] = useState<T | T[]>();
+  const baseUrl = "http://localhost:8000";
   useEffect(() => {
     fetchData(); // Fetch data from the Django backend when the component mounts
   }, []);
 
   const fetchData = async () => {
     try {
-      const response = await axios.get<T>("http://localhost:8000");
+      var response;
+
+      if (many) {
+        response = await axios.get<T[]>(baseUrl);
+      } else {
+        response = await axios.get<T>(baseUrl);
+      }
       setData(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);

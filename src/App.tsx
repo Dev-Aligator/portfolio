@@ -8,7 +8,7 @@ import Skills from "./components/Skills";
 import * as Models from "./DataInterfaces";
 import FetchData from "./FetchData";
 function App() {
-  const data = FetchData<Models.Banner>();
+  const data = FetchData<Models.Banner>(false) as Models.Banner | undefined;
   return (
     <div className="App">
       <NavBar></NavBar>
