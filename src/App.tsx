@@ -8,14 +8,16 @@ import Skills from "./components/Skills";
 import * as Models from "./DataInterfaces";
 import FetchData from "./FetchData";
 function App() {
-  const data = FetchData<Models.Banner>("banner/", false) as
+  const bannerData = FetchData<Models.Banner>("banner/", false) as
     | Models.Banner
     | undefined;
+
+  const skillsData = FetchData<Models.Skill>("skills/", true) as Models.Skill[];
   return (
     <div className="App">
       <NavBar></NavBar>
-      <Banner bannerData={data}></Banner>
-      <Skills></Skills>
+      <Banner bannerData={bannerData}></Banner>
+      <Skills skillData={skillsData}></Skills>
       <Projects></Projects>
       <Contact></Contact>
       <Footer></Footer>

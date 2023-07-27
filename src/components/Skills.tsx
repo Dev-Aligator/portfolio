@@ -5,8 +5,13 @@ import meter1 from "../assets/img/meter1.svg";
 import meter2 from "../assets/img/meter2.svg";
 import meter3 from "../assets/img/meter3.svg";
 import colorSharp from "../assets/img/color-sharp.png";
+import SkillBox from "./SkillBox";
+import * as Models from "../DataInterfaces";
 
-const Skills = () => {
+interface SkillProps {
+  skillData: Models.Skill[];
+}
+const Skills: React.FC<SkillProps> = ({ skillData }) => {
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -34,30 +39,19 @@ const Skills = () => {
             <div className="skill-bx">
               <h2>Skills</h2>
               <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry
+                Mastering various skills essential for success in the industry.
               </p>
               <Carousel
                 responsive={responsive}
                 infinite={true}
                 className="skill-slider"
               >
-                <div className="item">
-                  <img src={meter1} alt="Image"></img>
-                  <h5>Web Development</h5>
-                </div>
-                <div className="item">
-                  <img src={meter2} alt="Image"></img>
-                  <h5>Brand Identity</h5>
-                </div>
-                <div className="item">
-                  <img src={meter3} alt="Image"></img>
-                  <h5>Logo Design</h5>
-                </div>
-                <div className="item">
-                  <img src={meter1} alt="Image"></img>
-                  <h5>Web Development</h5>
-                </div>
+                {skillData?.map((skill) => (
+                  <SkillBox
+                    skillName={skill.skillName}
+                    skillPercentage={skill.skillPercentage}
+                  ></SkillBox>
+                ))}
               </Carousel>
             </div>
           </Col>

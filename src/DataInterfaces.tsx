@@ -10,3 +10,11 @@ export interface Banner {
   plainText: string;
   created: string;
 }
+
+export interface Skill {
+  id: number;
+  skillPercentage: number;
+  stopColor1: string;
+  stopColor2: string;
+  skillName: string;
+}
