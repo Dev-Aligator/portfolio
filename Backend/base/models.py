@@ -12,5 +12,8 @@ class Role(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     banner = models.ForeignKey(Banner, on_delete=models.CASCADE, related_name="roles")
 
-
-
+class Skill(models.Model):
+    skillPercentage = models.PositiveSmallIntegerField(default=90)
+    stopColor1 = models.CharField(max_length=20, null=True, blank=True)
+    stopColor2 = models.CharField(max_length=20, null=True, blank=True)    
+    skillName = models.CharField(max_length=100, unique=True)

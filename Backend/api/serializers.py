@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from base.models import Banner, Role
+from base.models import Banner, Role, Skill
 
 class RoleSerializer(serializers.ModelSerializer):
     class Meta:
@@ -11,4 +11,9 @@ class BannerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Banner
+        fields = '__all__'
+
+class SkillSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Skill
         fields = '__all__'
