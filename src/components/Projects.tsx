@@ -48,13 +48,13 @@ const Projects: React.FC<ProjectProps> = ({ projectsData }) => {
               <Tab.Content>
                 <Tab.Pane eventKey="first">
                   <Row>
-                    {projectsData.map((project) => {
+                    {projectsData?.map((project) => {
                       return (
                         <ProjectCard
-                          key={project.id}
-                          title={project.title}
-                          description={project.description}
-                          imgUrl={project.imgUrl}
+                          key={project?.id}
+                          title={project?.title}
+                          description={project?.description}
+                          imgUrl={project?.imgUrl}
                         />
                       );
                     })}

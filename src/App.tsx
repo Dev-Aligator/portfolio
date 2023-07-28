@@ -25,8 +25,7 @@ function App() {
       <NavBar></NavBar>
       <Banner bannerData={bannerData}></Banner>
       <Skills skillData={skillsData}></Skills>
-      {projectsData ? <Projects projectsData={projectsData}></Projects> : null}
-
+      <Projects projectsData={projectsData}></Projects>
       <Contact></Contact>
       <Footer></Footer>
     </div>
