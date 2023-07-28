@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
+import axios from "axios";
 const Contact = () => {
   const formInitialDetails = {
     firstName: "",
@@ -21,9 +22,31 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = () => {
-    setButtonText("Sending");
-    setStatus({ success: true, message: "" });
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    axios
+      .post("http://localhost:8000/api/post/contact/", formDetails)
+      .then((response) => {
+        setStatus({
+          success: true,
+          message: "Form submitted successfully!",
+        });
+        // Optionally, you can reset the form here
+        setFormDetails({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      })
+      .catch((error) => {
+        setStatus({
+          success: false,
+          message: "Form submission failed. Please try again later.",
+        });
+      });
   };
   return (
     <section className="contact" id="contact">
@@ -62,7 +85,7 @@ const Contact = () => {
                 </Col>
                 <Col sm={6} className="px-1">
                   <input
-                    type="tel"
+                    type="text"
                     value={formDetails.phone}
                     placeholder="Phone No."
                     onChange={(e) => onFormUpdate("phone", e.target.value)}
