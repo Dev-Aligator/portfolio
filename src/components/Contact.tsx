@@ -24,6 +24,7 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setButtonText("Sending...");
 
     axios
       .post("http://localhost:8000/api/post/contact/", formDetails)
@@ -40,12 +41,14 @@ const Contact = () => {
           phone: "",
           message: "",
         });
+        console.log(response);
       })
       .catch((error) => {
         setStatus({
           success: false,
           message: "Form submission failed. Please try again later.",
         });
+        console.log(error);
       });
   };
   return (
