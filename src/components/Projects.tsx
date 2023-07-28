@@ -36,19 +36,23 @@ const Projects: React.FC<ProjectProps> = ({ projectsData }) => {
                 id="pills-tab"
               >
                 <Nav.Item>
-                  <Nav.Link eventKey="first">Tab One</Nav.Link>
+                  <Nav.Link eventKey="first">Web Development</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="second">Tab Two</Nav.Link>
+                  <Nav.Link eventKey="second">Desktop Application</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="third">Tab Three</Nav.Link>
+                  <Nav.Link eventKey="third">Research</Nav.Link>
                 </Nav.Item>
               </Nav>
               <Tab.Content>
                 <Tab.Pane eventKey="first">
                   <Row>
                     {projectsData?.map((project) => {
+                      if (project?.tabIndex != 1) {
+                        return null;
+                      }
+
                       return (
                         <ProjectCard
                           key={project?.id}
@@ -60,9 +64,42 @@ const Projects: React.FC<ProjectProps> = ({ projectsData }) => {
                     })}
                   </Row>
                 </Tab.Pane>
-                <Tab.Pane eventKey="second">Loren Ipsum</Tab.Pane>
-                <Tab.Pane eventKey="third">Loren Ipsum</Tab.Pane>
-                <Tab.Pane eventKey="fourth">Loren Ipsum</Tab.Pane>
+                <Tab.Pane eventKey="second">
+                  <Row>
+                    {projectsData?.map((project) => {
+                      if (project?.tabIndex != 2) {
+                        return null;
+                      }
+
+                      return (
+                        <ProjectCard
+                          key={project?.id}
+                          title={project?.title}
+                          description={project?.description}
+                          imgUrl={project?.imgUrl}
+                        />
+                      );
+                    })}
+                  </Row>
+                </Tab.Pane>
+                <Tab.Pane eventKey="third">
+                  <Row>
+                    {projectsData?.map((project) => {
+                      if (project?.tabIndex != 3) {
+                        return null;
+                      }
+
+                      return (
+                        <ProjectCard
+                          key={project?.id}
+                          title={project?.title}
+                          description={project?.description}
+                          imgUrl={project?.imgUrl}
+                        />
+                      );
+                    })}
+                  </Row>
+                </Tab.Pane>
               </Tab.Content>
             </Tab.Container>
           </Col>
