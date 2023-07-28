@@ -13,12 +13,20 @@ function App() {
     | undefined;
 
   const skillsData = FetchData<Models.Skill>("skills/", true) as Models.Skill[];
+  const projectsData = FetchData<Models.Project>(
+    "projects/",
+    true
+  ) as Models.Project[];
+  console.log(projectsData);
+  console.log(bannerData);
+  console.log(skillsData);
   return (
     <div className="App">
       <NavBar></NavBar>
       <Banner bannerData={bannerData}></Banner>
       <Skills skillData={skillsData}></Skills>
-      <Projects></Projects>
+      {projectsData ? <Projects projectsData={projectsData}></Projects> : null}
+
       <Contact></Contact>
       <Footer></Footer>
     </div>

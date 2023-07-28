@@ -1,56 +1,14 @@
 import { Container, Col, Row, Tab, Nav } from "react-bootstrap";
 import ProjectCard from "./ProjectCard";
 import colorSharp2 from "../assets/img/color-sharp2.png";
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
+import * as Models from "../DataInterfaces";
+interface ProjectProps {
+  projectsData: Models.Project[];
+}
 
-const Projects = () => {
-  const projects = [
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
-    },
-
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
-    },
-
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
-    },
-
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
-    },
-
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
-    },
-
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
-    },
-
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
-    },
-  ];
+const Projects: React.FC<ProjectProps> = ({ projectsData }) => {
   return (
     <section className="project" id="project">
       <Container>
@@ -65,8 +23,8 @@ const Projects = () => {
                 >
                   <h2>Projects</h2>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry.
+                    Explore a diverse collection of captivating projects I've
+                    meticulously crafted
                   </p>
                 </div>
               )}
@@ -90,10 +48,10 @@ const Projects = () => {
               <Tab.Content>
                 <Tab.Pane eventKey="first">
                   <Row>
-                    {projects.map((project, index) => {
+                    {projectsData.map((project) => {
                       return (
                         <ProjectCard
-                          key={index}
+                          key={project.id}
                           title={project.title}
                           description={project.description}
                           imgUrl={project.imgUrl}
@@ -104,6 +62,7 @@ const Projects = () => {
                 </Tab.Pane>
                 <Tab.Pane eventKey="second">Loren Ipsum</Tab.Pane>
                 <Tab.Pane eventKey="third">Loren Ipsum</Tab.Pane>
+                <Tab.Pane eventKey="fourth">Loren Ipsum</Tab.Pane>
               </Tab.Content>
             </Tab.Container>
           </Col>

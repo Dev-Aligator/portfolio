@@ -18,3 +18,11 @@ export interface Skill {
   stopColor2: string;
   skillName: string;
 }
+
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  imgUrl: string;
+  tabIndex: number;
+}
