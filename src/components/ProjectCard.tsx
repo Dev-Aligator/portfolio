@@ -7,11 +7,11 @@ interface Project {
 }
 
 const ProjectCard = ({ title, description, imgUrl }: Project) => {
-  console.log(title, description, imgUrl);
+  const baseUrl = "http://localhost:8000";
   return (
     <Col sm={6} md={4}>
       <div className="proj-imgbx">
-        <img src={imgUrl} />
+        <img src={baseUrl + imgUrl} />
         <div className="proj-txtx">
           <h4>{title}</h4>
           <span>{description}</span>
