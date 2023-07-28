@@ -17,3 +17,9 @@ class Skill(models.Model):
     stopColor1 = models.CharField(max_length=20, null=True, blank=True)
     stopColor2 = models.CharField(max_length=20, null=True, blank=True)    
     skillName = models.CharField(max_length=100, unique=True)
+
+class Project(models.Model):
+    title = models.CharField(max_length=200, unique=True);
+    description = models.CharField(max_length=200);
+    imgUrl = models.CharField(max_length=200, unique=True);
+    tabIndex = models.PositiveSmallIntegerField(default=1);
