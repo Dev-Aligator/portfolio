@@ -41,6 +41,8 @@ const Contact = () => {
           phone: "",
           message: "",
         });
+        setButtonText("Send");
+
         console.log(response);
       })
       .catch((error) => {
